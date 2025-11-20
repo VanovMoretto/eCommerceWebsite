@@ -1,0 +1,156 @@
+.header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+/* Logo */
+.header-logo {
+  flex-shrink: 0;
+  margin-left: 2rem;
+}
+
+.header-logo h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #111111;
+  letter-spacing: 2px;
+}
+
+/* Search Bar */
+.header-search {
+  flex: 1;
+  max-width: 500px;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
+  border: none;
+  border-bottom: 2px solid #111111;
+  background-color: transparent;
+  font-family: 'Cinzel', serif;
+  font-size: 0.95rem;
+  color: #111111;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: #999999;
+}
+
+.search-input:focus {
+  border-bottom-color: #666666;
+}
+
+.search-icon {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #111111;
+  pointer-events: none;
+}
+
+/* Right Icons */
+.header-icons {
+  display: flex;
+  gap: 1.5rem;
+  flex-shrink: 0;
+  margin-right: 2rem;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #111111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+  font-size: 1.5rem;
+}
+
+.icon-button:hover {
+  color: #666666;
+  transform: scale(1.1);
+}
+
+.icon-button:active {
+  transform: scale(0.95);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-container {
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .header-logo {
+    margin-left: 1rem;
+  }
+
+  .header-logo h1 {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+  }
+
+  .header-search {
+    max-width: 300px;
+  }
+
+  .header-icons {
+    gap: 1rem;
+    margin-right: 1rem;
+  }
+
+  .icon-button {
+    padding: 0.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .header-logo {
+    margin-left: 0.5rem;
+    order: 1;
+  }
+
+  .header-search {
+    order: 3;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .header-icons {
+    order: 2;
+    margin-right: 0.5rem;
+  }
+
+  .header-logo h1 {
+    font-size: 1.1rem;
+  }
+}

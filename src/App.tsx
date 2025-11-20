@@ -1,8 +1,13 @@
+import Header from './components/Header'
+import './App.css'
+
 function App() {
   return (
-    <div>
-      <h1>ecommerce</h1>
-      <p>Bem-vindo ao seu projeto de ecommerce</p>
+    <div className="app">
+      <Header />
+      <main className="main-content">
+        {/* Conteúdo será adicionado aqui */}
+      </main>
     </div>
   )
 }
