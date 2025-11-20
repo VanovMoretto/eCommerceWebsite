@@ -48,7 +48,6 @@ const navItems: NavItem[] = [
     path: '/calcados',
     dropdown: [
       { label: 'Botas', path: '/calcados/botas' },
-      { label: 'Rasteiras', path: '/calcados/rasteiras' },
       { label: 'Salto alto', path: '/calcados/salto-alto' },
       { label: 'Tamancos', path: '/calcados/tamancos' },
       { label: 'Tênis', path: '/calcados/tenis' },

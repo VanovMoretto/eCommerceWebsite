@@ -7,6 +7,7 @@ import Calcados from './pages/Calcados'
 import Acessorios from './pages/Acessorios'
 import Ofertas from './pages/Ofertas'
 import Novidades from './pages/Novidades'
+import ProductDetail from './pages/ProductDetail'
 import './App.css'
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/acessorios/:subcategoria" element={<Acessorios />} />
           <Route path="/ofertas" element={<Ofertas />} />
           <Route path="/novidades" element={<Novidades />} />
+          <Route path="/produto/:id" element={<ProductDetail />} />
         </Routes>
       </main>
     </div>
