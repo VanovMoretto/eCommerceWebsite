@@ -26,6 +26,7 @@
 
 .header-logo h1 {
   margin: 0;
+  font-family: 'Cinzel', serif;
   font-size: 1.8rem;
   font-weight: 700;
   color: #111111;
@@ -45,7 +46,7 @@
   border: none;
   border-bottom: 1px solid #111111;
   background-color: transparent;
-  font-family: 'Cinzel', serif;
+  font-family: 'Sohne', sans-serif;
   font-size: 0.95rem;
   color: #111111;
   transition: all 0.3s ease;

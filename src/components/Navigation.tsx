@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './Navigation.css'
 
 interface DropdownItem {
@@ -73,6 +74,7 @@ const navItems: NavItem[] = [
 
 export default function Navigation() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
+  const navigate = useNavigate()
 
   const handleDropdownEnter = (label: string) => {
     setOpenDropdown(label)
@@ -83,7 +85,7 @@ export default function Navigation() {
   }
 
   const handleItemClick = (path: string) => {
-    window.location.href = path
+    navigate(path)
     setOpenDropdown(null)
   }
 

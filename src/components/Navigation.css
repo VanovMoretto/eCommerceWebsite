@@ -11,6 +11,7 @@
   margin: 0 auto;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0 1rem;
 }
 
@@ -25,7 +26,7 @@
   border: none;
   cursor: pointer;
   color: #111111;
-  font-family: 'Cinzel', serif;
+  font-family: 'Sohne', sans-serif;
   font-size: 0.95rem;
   font-weight: 500;
   padding: 1rem 1.5rem;
@@ -71,8 +72,11 @@
 
 .dropdown-divider {
   height: 1px;
-  background-color: #e8e8e8;
+  background: linear-gradient(to right, transparent, #e8e8e8 20%, #e8e8e8 80%, transparent);
   margin: 0;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .dropdown-item {
@@ -82,7 +86,7 @@
   background: none;
   border: none;
   color: #111111;
-  font-family: 'Cinzel', serif;
+  font-family: 'Sohne', sans-serif;
   font-size: 0.9rem;
   text-align: left;
   cursor: pointer;
@@ -156,6 +160,7 @@
   .nav-container {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
   }
 
   .nav-link {
