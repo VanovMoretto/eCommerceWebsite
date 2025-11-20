@@ -1,7 +1,14 @@
+import { useRef } from 'react'
 import { FiUser, FiHeart, FiShoppingBag, FiSearch } from 'react-icons/fi'
 import './Header.css'
 
 export default function Header() {
+  const searchInputRef = useRef<HTMLInputElement>(null)
+
+  const handleSearchIconClick = () => {
+    searchInputRef.current?.focus()
+  }
+
   return (
     <header className="header">
       <div className="header-container">
@@ -13,11 +20,19 @@ export default function Header() {
         {/* Search Bar */}
         <div className="header-search">
           <input 
+            ref={searchInputRef}
             type="text" 
             placeholder="O que você procura?" 
             className="search-input"
           />
-          <FiSearch className="search-icon" />
+          <button 
+            className="search-button"
+            onClick={handleSearchIconClick}
+            title="Pesquisar"
+            type="button"
+          >
+            <FiSearch className="search-icon" />
+          </button>
         </div>
 
         {/* Right Icons */}
