@@ -1,3 +1,18 @@
+import blusaImg from '../assets/Models/Feminino/blusa.png';
+import cachecolImg from '../assets/Models/Feminino/cachecol.png';
+import calcaImg from '../assets/Models/Feminino/calça.png';
+import camisaImg from '../assets/Models/Feminino/camisa.png';
+import camisetaImg from '../assets/Models/Feminino/camiseta.png';
+import macacaoImg from '../assets/Models/Feminino/macacao.png';
+import saiaImg from '../assets/Models/Feminino/saia.png';
+import shortsImg from '../assets/Models/Feminino/shorts.png';
+import vestidoImg from '../assets/Models/Feminino/vestido.png';
+
+import botasImg from '../assets/Models/Calcado/botas.png';
+import saltoImg from '../assets/Models/Calcado/salto.png';
+import tamancoImg from '../assets/Models/Calcado/tamanco.png';
+import tenisImg from '../assets/Models/Calcado/tenis.png';
+
 export interface Product {
   id: string
   name: string
@@ -16,7 +31,7 @@ export const products: Product[] = [
     id: 'blusa-1',
     name: 'Blusa',
     price: 89.90,
-    image: '/src/assets/Models/Feminino/blusa.png',
+    image: blusaImg,
     category: 'feminino',
     subcategory: 'blusas',
     color: 'Branca',
@@ -27,7 +42,7 @@ export const products: Product[] = [
     id: 'cachecol-1',
     name: 'Cachecol',
     price: 59.90,
-    image: '/src/assets/Models/Feminino/cachecol.png',
+    image: cachecolImg,
     category: 'feminino',
     subcategory: 'cachecois',
     color: 'Bege',
@@ -38,7 +53,7 @@ export const products: Product[] = [
     id: 'calca-1',
     name: 'Calça',
     price: 129.90,
-    image: '/src/assets/Models/Feminino/calça.png',
+    image: calcaImg,
     category: 'feminino',
     subcategory: 'calcas',
     color: 'Azul',
@@ -49,7 +64,7 @@ export const products: Product[] = [
     id: 'camisa-1',
     name: 'Camisa',
     price: 99.90,
-    image: '/src/assets/Models/Feminino/camisa.png',
+    image: camisaImg,
     category: 'feminino',
     subcategory: 'camisas',
     color: 'Branca',
@@ -60,7 +75,7 @@ export const products: Product[] = [
     id: 'camiseta-1',
     name: 'Camiseta',
     price: 69.90,
-    image: '/src/assets/Models/Feminino/camiseta.png',
+    image: camisetaImg,
     category: 'feminino',
     subcategory: 'camisetas',
     color: 'Rosa',
@@ -71,7 +86,7 @@ export const products: Product[] = [
     id: 'macacao-1',
     name: 'Macacão',
     price: 179.90,
-    image: '/src/assets/Models/Feminino/macacao.png',
+    image: macacaoImg,
     category: 'feminino',
     subcategory: 'macacoes',
     color: 'Azul',
@@ -82,7 +97,7 @@ export const products: Product[] = [
     id: 'saia-1',
     name: 'Saia',
     price: 109.90,
-    image: '/src/assets/Models/Feminino/saia.png',
+    image: saiaImg,
     category: 'feminino',
     subcategory: 'saias',
     color: 'Preta',
@@ -93,7 +108,7 @@ export const products: Product[] = [
     id: 'shorts-1',
     name: 'Shorts',
     price: 79.90,
-    image: '/src/assets/Models/Feminino/shorts.png',
+    image: shortsImg,
     category: 'feminino',
     subcategory: 'shorts',
     color: 'Azul',
@@ -104,7 +119,7 @@ export const products: Product[] = [
     id: 'vestido-1',
     name: 'Vestido',
     price: 159.90,
-    image: '/src/assets/Models/Feminino/vestido.png',
+    image: vestidoImg,
     category: 'feminino',
     subcategory: 'vestidos',
     color: 'Vermelho',
@@ -116,7 +131,7 @@ export const products: Product[] = [
     id: 'botas-1',
     name: 'Botas',
     price: 199.90,
-    image: '/src/assets/Models/Calcado/botas.png',
+    image: botasImg,
     category: 'calcados',
     subcategory: 'botas',
     color: 'Marrom',
@@ -127,7 +142,7 @@ export const products: Product[] = [
     id: 'salto-1',
     name: 'Salto Alto',
     price: 149.90,
-    image: '/src/assets/Models/Calcado/salto.png',
+    image: saltoImg,
     category: 'calcados',
     subcategory: 'salto-alto',
     color: 'Nude',
@@ -138,7 +153,7 @@ export const products: Product[] = [
     id: 'tamanco-1',
     name: 'Tamanco',
     price: 129.90,
-    image: '/src/assets/Models/Calcado/tamanco.png',
+    image: tamancoImg,
     category: 'calcados',
     subcategory: 'tamancos',
     color: 'Bege',
@@ -149,7 +164,7 @@ export const products: Product[] = [
     id: 'tenis-1',
     name: 'Tênis',
     price: 169.90,
-    image: '/src/assets/Models/Calcado/tenis.png',
+    image: tenisImg,
     category: 'calcados',
     subcategory: 'tenis',
     color: 'Branco',
