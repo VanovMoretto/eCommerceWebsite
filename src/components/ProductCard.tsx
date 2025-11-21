@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { Product } from '../data/products'
+import type { Product } from '../data/products'
 import './ProductCard.css'
 
 interface ProductCardProps {
