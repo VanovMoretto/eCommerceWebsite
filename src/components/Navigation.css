@@ -116,66 +116,19 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .nav-link {
-    padding: 0.875rem 1.2rem;
-    font-size: 0.9rem;
-  }
-
-  .dropdown-item {
-    padding: 0.65rem 1.2rem;
-    font-size: 0.85rem;
-  }
-
-  .dropdown-menu {
-    min-width: 180px;
+  .navigation {
+    display: none;
   }
 }
 
 @media (max-width: 768px) {
   .navigation {
-    padding: 0.5rem 0;
-  }
-
-  .nav-container {
-    padding: 0 0.5rem;
-    flex-wrap: wrap;
-  }
-
-  .nav-link {
-    padding: 0.75rem 1rem;
-    font-size: 0.85rem;
-  }
-
-  .dropdown-item {
-    padding: 0.6rem 1rem;
-    font-size: 0.8rem;
-  }
-
-  .dropdown-menu {
-    min-width: 160px;
+    display: none;
   }
 }
 
 @media (max-width: 480px) {
-  .nav-container {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    justify-content: flex-start;
-  }
-
-  .nav-link {
-    padding: 0.75rem 0.8rem;
-    font-size: 0.8rem;
-    min-width: fit-content;
-  }
-
-  .dropdown-item {
-    padding: 0.5rem 0.8rem;
-    font-size: 0.75rem;
-  }
-
-  .dropdown-menu {
-    min-width: 150px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  .navigation {
+    display: none;
   }
 }

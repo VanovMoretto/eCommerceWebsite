@@ -3,6 +3,17 @@ import { useState } from 'react'
 import { getProductById } from '../data/products'
 import './ProductDetail.css'
 
+const colorMap: { [key: string]: string } = {
+  'Branca': '#FFFFFF',
+  'Bege': '#F5F5DC',
+  'Azul': '#4169E1',
+  'Rosa': '#FFB6C1',
+  'Preta': '#000000',
+  'Vermelho': '#DC143C',
+  'Marrom': '#8B4513',
+  'Nude': '#E3BC9A',
+}
+
 export default function ProductDetail() {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
@@ -11,6 +22,8 @@ export default function ProductDetail() {
   const [cep, setCep] = useState('')
   const [isZoomed, setIsZoomed] = useState(false)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const [selectedSize, setSelectedSize] = useState(product?.size || 'M')
+  const [selectedImage, setSelectedImage] = useState(0)
 
   if (!product) {
     return (
@@ -44,11 +57,31 @@ export default function ProductDetail() {
     }
   }
 
+  const installmentValue = product.price / 9
+  const colorCode = colorMap[product.color] || '#CCCCCC'
+  
+  // Define tamanhos baseado na categoria
+  const sizes = product.category === 'calcados' ? ['34', '35', '36', '37', '38', '39', '40'] : ['P', 'M', 'G']
+  
+  // Simular múltiplas imagens (por enquanto usamos a mesma)
+  const images = [product.image, product.image, product.image]
+
   return (
     <div className="product-detail-container">
       <div className="product-detail-content">
         {/* Image Section */}
         <div className="product-detail-image-section">
+          <div className="image-thumbnails">
+            {images.map((img, index) => (
+              <div
+                key={index}
+                className={`thumbnail ${selectedImage === index ? 'active' : ''}`}
+                onClick={() => setSelectedImage(index)}
+              >
+                <img src={img} alt={`${product.name} ${index + 1}`} />
+              </div>
+            ))}
+          </div>
           <div
             className={`product-detail-image-container ${isZoomed ? 'zoomed' : ''}`}
             onMouseEnter={() => setIsZoomed(true)}
@@ -56,7 +89,7 @@ export default function ProductDetail() {
             onMouseMove={handleMouseMove}
           >
             <img
-              src={product.image}
+              src={images[selectedImage]}
               alt={product.name}
               className="product-detail-image"
               style={
@@ -74,38 +107,55 @@ export default function ProductDetail() {
         <div className="product-detail-info-section">
           <h1 className="product-detail-title">{product.name}</h1>
 
-          <div className="product-detail-row">
-            <span className="product-detail-label">Cor:</span>
-            <span className="product-detail-value">{product.color}</span>
+          <div className="product-detail-price-section">
+            <div className="product-detail-price">
+              R$ {product.price.toFixed(2).replace('.', ',')}
+            </div>
+            <p className="product-detail-installment">
+              9x de R$ {installmentValue.toFixed(2).replace('.', ',')} s/ juros
+            </p>
           </div>
 
           <div className="product-detail-row">
+            <span className="product-detail-label">Cor: {product.color}</span>
+            <div className="color-circle" style={{ backgroundColor: colorCode }}></div>
+          </div>
+
+          <div className="product-detail-row size-selection">
             <span className="product-detail-label">Tamanho:</span>
-            <span className="product-detail-value">{product.size}</span>
+            <div className="size-buttons">
+              {sizes.map((size) => (
+                <button
+                  key={size}
+                  className={`size-button ${selectedSize === size ? 'active' : ''}`}
+                  onClick={() => setSelectedSize(size)}
+                >
+                  {size}
+                </button>
+              ))}
+            </div>
           </div>
 
-          <div className="product-detail-price">
-            R$ {product.price.toFixed(2).replace('.', ',')}
-          </div>
+          <div className="action-buttons">
+            <button className="add-to-cart-button" onClick={handleAddToCart}>
+              Adicionar ao carrinho
+            </button>
 
-          <button className="add-to-cart-button" onClick={handleAddToCart}>
-            Adicionar ao carrinho
-          </button>
-
-          <div className="cep-section">
-            <label className="cep-label">Calcular frete:</label>
-            <div className="cep-input-group">
-              <input
-                type="text"
-                placeholder="Digite seu CEP"
-                value={cep}
-                onChange={(e) => setCep(e.target.value.replace(/\D/g, '').slice(0, 8))}
-                className="cep-input"
-                maxLength={8}
-              />
-              <button onClick={handleCalculateCep} className="cep-button">
-                Calcular
-              </button>
+            <div className="cep-section">
+              <label className="cep-label">Calcular frete:</label>
+              <div className="cep-input-group">
+                <input
+                  type="text"
+                  placeholder="Digite seu CEP"
+                  value={cep}
+                  onChange={(e) => setCep(e.target.value.replace(/\D/g, '').slice(0, 8))}
+                  className="cep-input"
+                  maxLength={8}
+                />
+                <button onClick={handleCalculateCep} className="cep-button">
+                  Calcular
+                </button>
+              </div>
             </div>
           </div>
 

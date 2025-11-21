@@ -15,10 +15,41 @@
 .product-detail-image-section {
   position: sticky;
   top: 100px;
+  display: flex;
+  gap: 1rem;
+}
+
+.image-thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 80px;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 106px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #f5f5f5;
+}
+
+.thumbnail:hover,
+.thumbnail.active {
+  border-color: #111111;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .product-detail-image-container {
-  width: 100%;
+  flex: 1;
   aspect-ratio: 3 / 4;
   overflow: hidden;
   background-color: #f5f5f5;
@@ -57,9 +88,33 @@
   margin: 0;
 }
 
+.product-detail-price-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.product-detail-price {
+  font-family: 'Sohne', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111111;
+  margin: 0;
+}
+
+.product-detail-installment {
+  font-family: 'Sohne', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #666666;
+  margin: 0;
+}
+
 .product-detail-row {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.75rem;
   align-items: center;
 }
 
@@ -67,7 +122,7 @@
   font-family: 'Sohne', sans-serif;
   font-size: 1rem;
   font-weight: 600;
-  color: #666666;
+  color: #111111;
 }
 
 .product-detail-value {
@@ -76,27 +131,74 @@
   color: #111111;
 }
 
-.product-detail-price {
+/* Color Circle */
+.color-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #e0e0e0;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Size Selection */
+.size-selection {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.size-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.size-button {
+  min-width: 48px;
+  height: 48px;
+  padding: 0 1rem;
+  background-color: transparent;
+  border: 1px solid #111111;
   font-family: 'Sohne', sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 0.95rem;
+  font-weight: 500;
   color: #111111;
-  margin: 1rem 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.size-button:hover {
+  background-color: #f5f5f5;
+}
+
+.size-button.active {
+  background-color: #111111;
+  color: #ffffff;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.5rem;
 }
 
 .add-to-cart-button {
   background-color: #111111;
   color: #ffffff;
   border: none;
-  padding: 1rem 2rem;
+  padding: 0.75rem 1.5rem;
   font-family: 'Sohne', sans-serif;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
   border-radius: 4px;
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
+  width: fit-content;
 }
 
 .add-to-cart-button:hover {
@@ -113,15 +215,13 @@
 .cep-section {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  padding: 1.5rem;
-  background-color: #f9f9f9;
-  border-radius: 8px;
+  gap: 0.5rem;
+  width: fit-content;
 }
 
 .cep-label {
   font-family: 'Sohne', sans-serif;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: #111111;
 }
@@ -132,12 +232,12 @@
 }
 
 .cep-input {
-  flex: 1;
-  padding: 0.75rem 1rem;
+  width: 180px;
+  padding: 0.625rem 0.875rem;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
   font-family: 'Sohne', sans-serif;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #111111;
   transition: all 0.3s ease;
   outline: none;
@@ -149,13 +249,13 @@
 }
 
 .cep-button {
-  padding: 0.75rem 1.5rem;
-  background-color: #111111;
-  color: #ffffff;
-  border: none;
+  padding: 0.625rem 1.25rem;
+  background-color: #ffffff;
+  color: #111111;
+  border: 1px solid #111111;
   border-radius: 4px;
   font-family: 'Sohne', sans-serif;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -163,7 +263,7 @@
 }
 
 .cep-button:hover {
-  background-color: #333333;
+  background-color: #f5f5f5;
 }
 
 .cep-button:active {
@@ -178,10 +278,10 @@
 
 .description-title {
   font-family: 'Sohne', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #111111;
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.75rem 0;
 }
 
 .description-text {
@@ -233,7 +333,7 @@
   }
 
   .product-detail-price {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -246,6 +346,18 @@
   .product-detail-image-section {
     position: relative;
     top: 0;
+    flex-direction: column-reverse;
+  }
+
+  .image-thumbnails {
+    flex-direction: row;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .thumbnail {
+    min-width: 60px;
+    height: 80px;
   }
 
   .product-detail-title {
@@ -253,19 +365,22 @@
   }
 
   .product-detail-price {
-    font-size: 1.5rem;
-    margin: 0.5rem 0;
+    font-size: 1.4rem;
+  }
+
+  .add-to-cart-button {
+    width: 100%;
   }
 
   .cep-section {
-    padding: 1rem;
+    width: 100%;
+  }
+
+  .cep-input {
+    flex: 1;
   }
 
   .cep-input-group {
-    flex-direction: column;
-  }
-
-  .cep-button {
     width: 100%;
   }
 }
@@ -283,8 +398,23 @@
     font-size: 1.25rem;
   }
 
+  .product-detail-installment {
+    font-size: 0.85rem;
+  }
+
   .add-to-cart-button {
     width: 100%;
     padding: 0.875rem 1.5rem;
+  }
+
+  .size-button {
+    min-width: 44px;
+    height: 44px;
+    font-size: 0.9rem;
+  }
+
+  .thumbnail {
+    min-width: 50px;
+    height: 66px;
   }
 }
