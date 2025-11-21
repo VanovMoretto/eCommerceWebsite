@@ -132,6 +132,13 @@
 }
 
 /* Color Circle */
+.product-detail-color-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
 .color-circle {
   width: 32px;
   height: 32px;
@@ -154,13 +161,13 @@
 }
 
 .size-button {
-  min-width: 48px;
-  height: 48px;
-  padding: 0 1rem;
+  min-width: 44px;
+  height: 36px;
+  padding: 0 0.875rem;
   background-color: transparent;
   border: 1px solid #111111;
   font-family: 'Sohne', sans-serif;
-  font-size: 0.95rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: #111111;
   cursor: pointer;

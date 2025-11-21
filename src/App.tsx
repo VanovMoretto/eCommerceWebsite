@@ -13,8 +13,10 @@ import './App.css'
 function App() {
   return (
     <div className="app">
-      <Header />
-      <Navigation />
+      <div className="sticky-header-wrapper">
+        <Header />
+        <Navigation />
+      </div>
       <main className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />

@@ -10,6 +10,13 @@
   color: #111111;
 }
 
+.sticky-header-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #ffffff;
+}
+
 .main-content {
   max-width: 1400px;
   margin: 0 auto;

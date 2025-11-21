@@ -3,9 +3,6 @@
   border-bottom: 1px solid #e0e0e0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   padding: 1rem 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
 }
 
 .header-container {
@@ -222,6 +219,11 @@
     order: 3;
     gap: 0.5rem;
     margin-right: 0;
+  }
+
+  .header-icons .icon-button:nth-child(1),
+  .header-icons .icon-button:nth-child(2) {
+    display: none;
   }
 
   .icon-button {

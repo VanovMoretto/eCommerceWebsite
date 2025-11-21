@@ -116,7 +116,7 @@ export default function ProductDetail() {
             </p>
           </div>
 
-          <div className="product-detail-row">
+          <div className="product-detail-color-row">
             <span className="product-detail-label">Cor: {product.color}</span>
             <div className="color-circle" style={{ backgroundColor: colorCode }}></div>
           </div>

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { FiX, FiChevronDown } from 'react-icons/fi'
+import { FiX, FiChevronDown, FiUser, FiHeart } from 'react-icons/fi'
 import './MobileMenu.css'
 
 interface MobileMenuProps {
@@ -26,9 +26,20 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       <div className={`mobile-menu-overlay ${isOpen ? 'active' : ''}`} onClick={onClose} />
       <div className={`mobile-menu ${isOpen ? 'active' : ''}`}>
         <div className="mobile-menu-header">
-          <h2>Menu</h2>
+          <h2>CARMENERE</h2>
           <button className="close-button" onClick={onClose}>
             <FiX size={24} />
+          </button>
+        </div>
+
+        <div className="mobile-menu-icons">
+          <button className="mobile-icon-button" title="Login">
+            <FiUser size={22} />
+            <span>Minha Conta</span>
+          </button>
+          <button className="mobile-icon-button" title="Favoritos">
+            <FiHeart size={22} />
+            <span>Favoritos</span>
           </button>
         </div>
 

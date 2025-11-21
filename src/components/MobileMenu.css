@@ -8,7 +8,7 @@
   z-index: 998;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s ease;
+  transition: opacity 0.4s ease-out, visibility 0.4s ease-out;
 }
 
 .mobile-menu-overlay.active {
@@ -25,7 +25,7 @@
   height: 100vh;
   background-color: #ffffff;
   z-index: 999;
-  transition: left 0.3s ease;
+  transition: left 0.4s ease-out;
   overflow-y: auto;
   box-shadow: 2px 0 12px rgba(0, 0, 0, 0.1);
 }
@@ -43,7 +43,7 @@
 }
 
 .mobile-menu-header h2 {
-  font-family: 'Sohne', sans-serif;
+  font-family: 'Cinzel', serif;
   font-size: 1.5rem;
   font-weight: 700;
   color: #111111;
@@ -63,6 +63,38 @@
 }
 
 .close-button:hover {
+  color: #666666;
+}
+
+.mobile-menu-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.mobile-icon-button {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #111111;
+  font-family: 'Sohne', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-align: left;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.mobile-icon-button:hover {
+  background-color: #f9f9f9;
   color: #666666;
 }
 
